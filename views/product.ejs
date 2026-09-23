@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Project Phones</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="../../stylesheet.css" type="text/css" />
+    <style type="text/css">.body { width: auto; }</style>
+
+
+ </head>
+<body>
+    <!-- Header section with a title and a link to the home page -->
+    <header>
+        <h1>Phone Individual</h1>
+        <a href="/"><u>HOME</u></a>
+    </header>
+
+    <!-- Main content area displaying individual phone details -->
+    <main>
+        <% result.forEach(function(item) { %> 
+            <!-- Container for each phone's details -->
+            <div class="phoneBigBox">
+                <!-- Image of the phone -->
+                <img class="bigimg" src="/<%= item.image %>">
+                <!-- Details about the phone -->
+                <div class="tetxBigBox">
+                    <h3><%= item.model %></h3>
+                    <hr>
+                    <p>PRICE: £<%= item.price %></p>
+                    <!-- Link to view phones by brand -->
+                    <p>BRAND: <a href="/brand/<%= item.brand %>"><%= item.brand %></a></p>
+                    <p>DESCRIPTION: <%= item.descriptions %></p>
+                </div>
+            </div>
+        <% }); %>
+    </main>
+
+    <!-- Footer section -->
+    <footer></footer>
+</body>
+</html>

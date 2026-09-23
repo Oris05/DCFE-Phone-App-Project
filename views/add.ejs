@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Project Phones</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="./stylesheet.css" type="text/css" />
+    <style type="text/css">.body { width: auto; }</style>
+  </head>
+  <body>
+
+<!-- Header section with a title and a link to the home page -->
+<header>
+  <h1>Phones</h1>
+  <a href="/"><u>HOME</u></a>
+</header>
+
+<!-- Main content area with a form for adding a new phone -->
+<main>
+  <div class="IamTheOneWhoHoldsAll">
+      <!-- Form for adding a new phone, includes fields for price, brand, model, descriptions, and an image upload -->
+      <form action="/add" enctype="multipart/form-data" method="post">
+          <input name="price" type="number" placeholder="price">
+          <input name="brand" type="text" placeholder="brand">
+          <input name="model" type="text" placeholder="model">
+          <input name="descriptions" type="text" placeholder="descriptions">
+
+          <!-- Label for the file input, styled to look like a button -->
+          <label style="display: inline-block; background-color: #0077FF; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+              <span id="file-name-label">Choose an Image</span>
+              <!-- File input for image upload, hidden and triggered by the label -->
+              <input type="file" style="display: none;" name="image" accept="image/*" onchange="displayFileName(this)">
+          </label>
+
+          <!-- Submit button for the form -->
+          <input type="submit" value="Add a phone">
+      </form>
+  </div>
+</main>
+
+<!-- Footer section -->
+<footer></footer>
+
+<!-- Script to display the selected file name in the label -->
+<script>
+  function displayFileName(input) {
+      const fileInput = document.querySelector('input[type="file"]');
+      const fileNameLabel = document.getElementById('file-name-label');
+      
+      if (fileInput.files.length > 0) {
+          fileNameLabel.textContent = fileInput.files[0].name;
+      } else {
+          fileNameLabel.textContent = 'Choose an Image';
+      }
+  }
+</script>
+</body>
+</html>
