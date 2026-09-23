@@ -1,4 +1,3 @@
-<img width="913" height="392" alt="image" src="https://github.com/user-attachments/assets/4e3f831c-5b6d-4fc6-8c92-bb0741120dc3" />
 
 # What the Project Is
 This project is a simple Node.js and Express web application that connects to a MySQL database and allows users to manage mobile phone entries by adding new phones, viewing all phones, filtering phones by brand, and opening individual product pages, with EJS used for rendering and all data stored in a MySQL table.
